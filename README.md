@@ -1,5 +1,5 @@
 # R and Rmarkdown homework assignment for BIOL422/423
-## Due as a pull request on Friday, October 16, 2018 before 11:59 pm
+## Due as a pull request on Tuesday, October 16, 2018 before 11:59 pm
 
 The **goal of this assignment** is to introduce you to the use of R, RStudio, and Rmarkdown to analyze data. The input data for this week's analyses will be the BLAST output files from the BLAST scripting homework. 
 
