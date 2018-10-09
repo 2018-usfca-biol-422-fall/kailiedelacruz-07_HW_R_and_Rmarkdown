@@ -125,7 +125,7 @@ joined_blast_data_metadata <- metadata_in %>%
 ```{r histograms}
 # Here we're using the dplyr piping syntax to select a subset of rows matching a
 # criteria we specify (using the filter) function, and then pull out a column
-# from the data to make a histogram. 
+# from the data to make a histogram.
 joined_blast_data_metadata %>%
   filter(env_material_s == "sebum") %>%
   ggplot(aes(x = pident)) +
@@ -138,7 +138,7 @@ Don't forget to report what your figures show in words, here in the Results sect
 
 ```{r summary-table}
 # Finally, we'd like to be able to make a summary table of the counts of
-# sequences for each subject for both sample types To do that we can use the 
+# sequences for each subject for both sample types. To do that we can use the
 # table() function. We add the kable() function as well (from the tidyr package)
 # in order to format the table nicely when the document is knitted
 kable(table(joined_blast_data_metadata$host_subject_id_s,
