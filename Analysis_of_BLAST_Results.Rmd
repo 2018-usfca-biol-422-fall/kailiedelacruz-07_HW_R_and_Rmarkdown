@@ -134,7 +134,18 @@ joined_blast_data_metadata %>%
   filter(env_material_s == "sebum") %>%
   ggplot(aes(x = pident)) +
     geom_histogram() +
-    ggtitle("Percent Identity") +
+    ggtitle("Percent Identity of sebum") +
+    xlab("Percent")
+```
+```{r histograms}
+# Here we're using the dplyr piping syntax to select a subset of rows matching a
+# criteria we specify (using the filter) function, and then pull out a column
+# from the data to make a histogram.
+joined_blast_data_metadata %>%
+  filter(env_material_s == "dust") %>%
+  ggplot(aes(x = pident)) +
+    geom_histogram() +
+    ggtitle("Percent Identity of dust") +
     xlab("Percent")
 ```
 
