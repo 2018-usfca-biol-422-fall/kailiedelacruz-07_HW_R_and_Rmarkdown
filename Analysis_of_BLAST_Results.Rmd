@@ -137,7 +137,23 @@ joined_blast_data_metadata %>%
     ggtitle("Percent Identity of sebum") +
     xlab("Percent")
 ```
-```{r histograms}
+
+```{r group-by-summarize}
+# Group by anonymized name and calculate the mean percent identity
+joined_blast_data_metadata %>%
+  group_by(anonymized_name_s) %>%
+  summarize(mean_pident = mean(pident),
+            sd_pident = sd(pident)) %>%
+  ggplot(aes(x = anonymized_name_s,
+             y = mean_pident)) +
+  geom_col(fill = "dodger blue") +
+  geom_errorbar(aes(ymax = mean_pident + sd_pident,
+                    ymin = mean_pident - sd_pident),
+                width = 0.3) +
+  theme(axis.text.x = element_text(angle = 90,
+                                   hjust = 1))
+```
+```{r histograms-dust}
 # Here we're using the dplyr piping syntax to select a subset of rows matching a
 # criteria we specify (using the filter) function, and then pull out a column
 # from the data to make a histogram.
@@ -147,6 +163,20 @@ joined_blast_data_metadata %>%
     geom_histogram() +
     ggtitle("Percent Identity of dust") +
     xlab("Percent")
+```
+```{r counting-rows}
+# 
+joined_blast_data_metadata %>%
+  group_by(sscinames, env_material_s) %>%
+  tally () %>%
+  arrange(desc(n)) %>%
+  filter(n > 300) %>%
+  ggplot(aes(x = sscinames,
+             y = n,
+             fill = env_material_s)) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90,
+                                   hjust = 1))
 ```
 
 Don't forget to report what your figures show in words, here in the Results section.
