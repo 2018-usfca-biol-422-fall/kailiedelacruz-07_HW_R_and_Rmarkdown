@@ -171,10 +171,9 @@ joined_blast_data_metadata %>%
 
 ## Figure 4
 ```{r counting-rows}
-# 
 joined_blast_data_metadata %>%
   group_by(sscinames, env_material_s) %>%
-  tally () %>%
+  tally() %>%
   arrange(desc(n)) %>%
   filter(n > 300) %>%
   ggplot(aes(x = sscinames,
