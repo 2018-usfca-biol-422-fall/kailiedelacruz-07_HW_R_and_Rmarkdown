@@ -125,7 +125,7 @@ joined_blast_data_metadata <- metadata_in %>%
             by = c("Run_s" = "sample_name"))
 ```
 
-
+## Figure 1
 ```{r histograms}
 # Here we're using the dplyr piping syntax to select a subset of rows matching a
 # criteria we specify (using the filter) function, and then pull out a column
@@ -138,6 +138,8 @@ joined_blast_data_metadata %>%
     xlab("Percent")
 ```
 
+
+## Figure 2
 ```{r group-by-summarize}
 # Group by anonymized name and calculate the mean percent identity
 joined_blast_data_metadata %>%
@@ -153,6 +155,7 @@ joined_blast_data_metadata %>%
   theme(axis.text.x = element_text(angle = 90,
                                    hjust = 1))
 ```
+## Figure 3
 ```{r histograms-dust}
 # Here we're using the dplyr piping syntax to select a subset of rows matching a
 # criteria we specify (using the filter) function, and then pull out a column
@@ -164,6 +167,7 @@ joined_blast_data_metadata %>%
     ggtitle("Percent Identity of dust") +
     xlab("Percent")
 ```
+## Figure 4
 ```{r counting-rows}
 # 
 joined_blast_data_metadata %>%
@@ -179,7 +183,15 @@ joined_blast_data_metadata %>%
                                    hjust = 1))
 ```
 
-Don't forget to report what your figures show in words, here in the Results section.
+The use of histograms, plots and graphs allowed me to analyze the acceptance or rejection of the hypothesis that the bacteria found on hands compared to the bacteria found on the surfaces touched by the hands can be used as forensic identification. Overall, the figures above represent a strong case for the given hypothesis of this experiment. 
+
+Figure 1 looks closely at the count of the percent identity of sebum in the samples, which as mentioned before, is a complex mixture of lipids that is found on human hands as a form of protection. The column titled "env_material_s" found in the metadata of this study gives us specfic information about the types of materials that are found on the samples studied. In further detail, the two types of materials seen were dust and sebum, where dust related to the computer mice and the sebum related to human hands. As this figure focuses strictly on env_material_s and the percent identity of sebum, we know that it is telling us how well certain tests were able to detect sebum material which was linked to human hands. Figure 1 shows high percent identities of above 80% for the samples analyzed. 
+
+Using a bar graph, the mean percent identity was compared to the sample names in Figure 2. With the use of error bars, we were able to observe how accurate the results were. 
+
+Similar to Figure 1, Figure 3 looks closely at the count of the percent identity of dust in the samples, which was related to computer mice. This histogram was also created using the env_material_s column found in the metadata, which gives us information about the types of material looked at with each sample. Focusing on dust, Figure 3 also shows count numbers from 0-200 with high percent identities of dust above 80%. 
+
+
 
 ```{r summary-table}
 # Finally, we'd like to be able to make a summary table of the counts of
@@ -192,5 +204,5 @@ kable(table(joined_blast_data_metadata$host_subject_id_s,
 
 # Discussion
 
-Add 2-3 paragraphs here interpreting your results and considering future directions one might take in analyzing these data.
+Figure 1 generally shows strong support for the hypothesis because in all of the samples observed, the percent identity of sebum was higher than 80%. Counts ranging from 0-2000 with high percent identities above 80% proves the fact that the data collected is reliable. This is because the sebum was the part of the hand that was being obsrved. 
 
