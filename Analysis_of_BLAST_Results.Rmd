@@ -183,13 +183,15 @@ joined_blast_data_metadata %>%
                                    hjust = 1))
 ```
 
-The use of histograms, plots and graphs allowed me to analyze the acceptance or rejection of the hypothesis that the bacteria found on hands compared to the bacteria found on the surfaces touched by the hands can be used as forensic identification. Overall, the figures above represent a strong case for the given hypothesis of this experiment. 
+The use of histograms, plots and graphs allowed me to analyze the acceptance or rejection of the hypothesis that the bacteria found on hands compared to the bacteria found on the surfaces touched by the hands can be used as forensic identification. 
 
 Figure 1 looks closely at the count of the percent identity of sebum in the samples, which as mentioned before, is a complex mixture of lipids that is found on human hands as a form of protection. The column titled "env_material_s" found in the metadata of this study gives us specfic information about the types of materials that are found on the samples studied. In further detail, the two types of materials seen were dust and sebum, where dust related to the computer mice and the sebum related to human hands. As this figure focuses strictly on env_material_s and the percent identity of sebum, we know that it is telling us how well certain tests were able to detect sebum material which was linked to human hands. Figure 1 shows high percent identities of above 80% for the samples analyzed. 
 
-Using a bar graph, the mean percent identity was compared to the sample names in Figure 2. With the use of error bars, we were able to observe how accurate the results were. 
+The bar graph, or Figure 2, studied the mean percent identity compared to the sample names found in the anonymize_name_s column in the metadata. With the use of error bars, we were able to observe how accurate the results were. Mean percent identities, regardless of whether dust or sebum was being tested, were close to 100 in all anonymized name samples. 
 
 Similar to Figure 1, Figure 3 looks closely at the count of the percent identity of dust in the samples, which was related to computer mice. This histogram was also created using the env_material_s column found in the metadata, which gives us information about the types of material looked at with each sample. Focusing on dust, Figure 3 also shows count numbers from 0-200 with high percent identities of dust above 80%. 
+
+Figure 4 shows a comparison bar graph that looks at the amount of sebum vs. dust found in the specific bacteria species known as Acidovorax sp., Bacteroidetes endosymbiont of Metaseiulus occidentalis, Bartonella washoensis , Aquitalea sp. KJ011, Spiroplasma corruscae, and Solemya pervemicosa gill symbiont. Comparing the types of materials found in the species of bacterias can tell us where certain species of bacteria can be found. For example, if there is a higher count of sebum related to species A, then it is highly likely that this species was found on a human hand. 
 
 
 
@@ -204,5 +206,9 @@ kable(table(joined_blast_data_metadata$host_subject_id_s,
 
 # Discussion
 
-Figure 1 generally shows strong support for the hypothesis because in all of the samples observed, the percent identity of sebum was higher than 80%. Counts ranging from 0-2000 with high percent identities above 80% proves the fact that the data collected is reliable. This is because the sebum was the part of the hand that was being obsrved. 
+The figures created were strong evidence for our hypothesis. Figure 1 generally shows strong support for the hypothesis because in all of the samples observed, the percent identity of sebum was higher than 80%. Counts ranging from 0-2000 with high percent identities above 80% proves the fact that the data collected is reliable. This is because the sebum was the part of the hand that was being observed and so having a high amount of this means that the correct material was analyzed rather than another material that can be associated with different types of bacteria than normally seen. Like figure 1, figure 3 which looked closely at the percent identity of dust found on samples also shows strong support for the hypothesis for similar reasons. Specifically, with counts ranging from 0-2000 and high percent identities above 80%, there data collected was more accurate when studying computer mice. Continuing to look at percent identites in figure 2, high means of these numbers for the samples proves further accuracy of the materials that were being studied. This ultimately leads to more accurate data collected as well as mentioned before. 
+
+Studying a factor other than percent identity of materials, figure 4 provided more information about the materials that were associated with different species of bacteria. While some species strictly contained a single material (dust only or sebum only), the species that contained both provided us with the idea that these are species that can lead us to forensic identification methods. This is because this may be the overlap that is necessary to show the relationship between the contacted surface and the hand that initially made contact. 
+
+Overall, the figures above represent a strong case for the given hypothesis of this experiment. Collecting data of the accurate and necessary materials generally allows for the acceptance of the hypothesis. 
 
