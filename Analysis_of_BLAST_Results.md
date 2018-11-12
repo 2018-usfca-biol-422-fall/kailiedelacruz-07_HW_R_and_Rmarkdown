@@ -6,7 +6,7 @@ October 9, 2018
 Introduction
 ============
 
-On Earth, there are about one trillion species of microorganisms, such as bacteria, surrounding us. While we have a general idea of the amount of microorganisms around us, about 99.999% of them are actually unknown. Even though there is much more to learn about the bacteria that surrounds us, the current information about species that we do know are still able to be applied to very significant aspects that we deal with each day. As bacteria can be found all around us, one of these aspects include the correlation between what can be found on the palms of our hands and the things that we touch. In a study done, it stated that "the diversity of skin-associated bacterial communities is far higher than previously recognized, with a high degree of interindividual variability in the composition of bacterial communities" (Fierer et al., 2010.) In more detail, in this study, the researchers analyzed recuperated skin bacteria from surfaces that were touched in comparison to the skin bacteria that were found on the hands that had touched such surfaces. It was hypothesized that skin bacteria left on objects can be compared to bacteria found on the actual skin surface that originally touched the object which can be used as a form of forensic identification. The results of their study proved that they were able to match the object to the human individual that had touched it through the use of a "high-throughput pyrosequencing-based approach".
+On Earth today, there are about one trillion species of microorganisms, such as bacteria, surrounding us. While we have a general idea of the *amount* of microorganisms around us, about 99.999% of them are actually unknown. Even though there is much more to learn about the bacteria that surrounds us, the current information about species that we do know are still able to be applied to very significant aspects that we deal with each day. As bacteria can be found all around us, one of these aspects include the correlation between what can be found on the palms of our hands and the things that we touch. In a study done, it stated that "the diversity of skin-associated bacterial communities is far higher than previously recognized, with a high degree of interindividual variability in the composition of bacterial communities" (Fierer et al., 2010.) In more detail, in this study, the researchers analyzed recuperated skin bacteria from surfaces that were touched in comparison to the skin bacteria that were found on the hands that had touched such surfaces. It was hypothesized that skin bacteria left on objects can be compared to bacteria found on the actual skin surface that originally touched the object which can be used as a form of forensic identification. The results of their study proved that they were able to match the object to the human individual that had touched it through the use of a "high-throughput pyrosequencing-based approach".
 
 According to Kausar Malik and Nabiha Naeem in a research article, majority of the isolated pathogenic microorganisms that are found on computer keyboards and computer mice included E. Coli, Salmonella, Shigella and Staphylococcus (2014.) Giving a brief summary about the bacteria seen in Fierer's study compared to the results studied in the research article, common species found included Staphylococcus succinus, Solemya pervenicosa gill symbiont, and Pinus massoniana.
 
@@ -128,8 +128,7 @@ joined_blast_data_metadata <- metadata_in %>%
             by = c("Run_s" = "sample_name"))
 ```
 
-Figure 1
---------
+**Figure 1**
 
 ``` r
 # Here we're using the dplyr piping syntax to select a subset of rows matching a
@@ -147,8 +146,7 @@ joined_blast_data_metadata %>%
 
 ![](Analysis_of_BLAST_Results_files/figure-markdown_github/histograms-1.png)
 
-Figure 2
---------
+**Figure 2**
 
 ``` r
 # Group by anonymized name and calculate the mean percent identity
@@ -168,8 +166,7 @@ joined_blast_data_metadata %>%
 
 ![](Analysis_of_BLAST_Results_files/figure-markdown_github/group-by-summarize-1.png)
 
-Figure 3
---------
+**Figure 3**
 
 ``` r
 # Here we're using the dplyr piping syntax to select a subset of rows matching a
@@ -187,14 +184,12 @@ joined_blast_data_metadata %>%
 
 ![](Analysis_of_BLAST_Results_files/figure-markdown_github/histograms-dust-1.png)
 
-Figure 4
---------
+**Figure 4**
 
 ``` r
-# 
 joined_blast_data_metadata %>%
   group_by(sscinames, env_material_s) %>%
-  tally () %>%
+  tally() %>%
   arrange(desc(n)) %>%
   filter(n > 300) %>%
   ggplot(aes(x = sscinames,
@@ -207,8 +202,7 @@ joined_blast_data_metadata %>%
 
 ![](Analysis_of_BLAST_Results_files/figure-markdown_github/counting-rows-1.png)
 
-Table 1
--------
+**Table 1**
 
 ``` r
 # Finally, we'd like to be able to make a summary table of the counts of
