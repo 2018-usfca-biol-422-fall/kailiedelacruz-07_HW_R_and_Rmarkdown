@@ -128,12 +128,12 @@ joined_blast_data_metadata <- metadata_in %>%
 **Figure 1**: The percent identity of sequences related to sebum varied across the samples. While percentages at around 86% and 100% held the highest counts from 1500-2500, all of the other values held counts ranging from 0-500. 
 ```{r histogram-1}
 # Here a ggplot is created to reveal the
-# percent identity of sebum. Sebum is related to 
-# the env_material_s column in the data which 
+# percent identity of sebum. Sebum is related to
+# the env_material_s column in the data which
 # tells us what the sample is taken from. Sebum
-# is taken from fingers, while dust is taken 
+# is taken from fingers, while dust is taken
 # from the computer. A higher percentage of sebum
-# means for more accurate data about the fingertips 
+# means for more accurate data about the fingertips
 joined_blast_data_metadata %>%
   filter(env_material_s == "sebum") %>%
   ggplot(aes(x = pident)) +
@@ -143,11 +143,11 @@ joined_blast_data_metadata %>%
 ```
 **Figure 2**
 ```{r}
-# Here is a bar graph that looks at the 
-# anonymized name in comparison to the 
-# mean_pident. Looking at the mean percent 
-# identity compared to the samples shows us 
-# how accurate the data collected is. Error 
+# Here is a bar graph that looks at the
+# anonymized name in comparison to the
+# mean_pident. Looking at the mean percent
+# identity compared to the samples shows us
+# how accurate the data collected is. Error
 # bars are included to help us with this.
 joined_blast_data_metadata %>%
   group_by(anonymized_name_s) %>%
@@ -164,10 +164,10 @@ joined_blast_data_metadata %>%
 ```
 **Figure 3**: The percent identity of sequences related to dust varied across the samples. While percentages at around 87%, 99%, and 100% held the highest counts from 800-1700, all of the other values held counts ranging from 0-300. 
 ```{r histogram-2}
-# Here a ggplot is created to reveal the 
-# percent identity of dust. Dust is taken from 
-# the env_material_s columm of the data. While 
-# sebum is taken from fingertips, dust is taken 
+# Here a ggplot is created to reveal the
+# percent identity of dust. Dust is taken from
+# the env_material_s columm of the data. While
+# sebum is taken from fingertips, dust is taken
 # from the computer. A higher percentage of the dust
 # means for more accurate data of the computer.
 joined_blast_data_metadata %>%
@@ -181,12 +181,12 @@ joined_blast_data_metadata %>%
 **Figure 4**: The species of bacteria varied in counts within the dust and sebum samples. *Acidovorax sp.* and *Aquitalea sp. KJ011* were species of bacteria that were only found in dust samples, while *Bacteroidetes endosymbiont of Metaseiulus occidentalis* and *Spiroplasma corruscae* were only found in sebum samples. *Bartonella washoensis* and *Solemya pervenicosa gill* were found in both the dust and sebum samples. 
 ```{r}
 # Here a comparison bar graph is created
-# to show the comparison between dust 
-# and sebum found in each of the sscinames. 
+# to show the comparison between dust
+# and sebum found in each of the sscinames.
 # This can tell us where certain bacterias
 # are found. The filter is important because
-# it focuses on counts larger than 300, which 
-# reveal the most important data. 
+# it focuses on counts larger than 300, which
+# reveal the most important data.
 joined_blast_data_metadata %>%
   group_by(sscinames, env_material_s) %>%
   tally() %>%
